@@ -60,7 +60,7 @@ const Storage = () => {
   const updateMovementComment = async (movementId, comment) => {
     try {
       const response = await axios.patch(
-        `http://localhost:3000/api/stockmovement/update-comment/${movementId}`,
+        `https://cegm-backend.onrender.com/api/stockmovement/update-comment/${movementId}`,
         { adj_Comment: comment }
       );
       return response.data;
@@ -106,7 +106,7 @@ const Storage = () => {
     // Proceed with quantity reconciliation
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/stockmovement/reconcile",
+        "https://cegm-backend.onrender.com/api/stockmovement/reconcile",
         {
           movements: updatedMovements,
         }
@@ -323,7 +323,7 @@ const Storage = () => {
   const fetchStockMovements = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:3000/api/stockMovement"
+        "https://cegm-backend.onrender.com/api/stockMovement"
       );
       let movements = response.data;
 

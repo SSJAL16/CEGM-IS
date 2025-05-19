@@ -29,7 +29,7 @@ const CreateTransaction = () => {
 
     const fetchTransactionDetails = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/getTransaction/${transactionId}`);
+        const response = await axios.get(`https://cegm-backend.onrender.com/getTransaction/${transactionId}`);
         console.log('Fetched data:', response.data); // Log the fetched data for debugging
 
         if (response.data) {
@@ -152,7 +152,7 @@ const CreateTransaction = () => {
     };
 
     // Send sales transaction and items to the backend
-    axios.post("http://localhost:3000/createSalesTransaction", salesTransaction)
+    axios.post("https://cegm-backend.onrender.com/createSalesTransaction", salesTransaction)
       .then(result => {
         if (result.data.success) {
           setShowModal(true);
@@ -181,7 +181,7 @@ const CreateTransaction = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/categories');
+        const response = await axios.get('https://cegm-backend.onrender.com/categories');
         const fetchedCategories = response.data.categories
         const categoryOptions = fetchedCategories.map(category => ({
           value: category,
@@ -225,7 +225,7 @@ const CreateTransaction = () => {
 
   const fetchProductsByCategory = async (category, index) => {
     try {
-      const response = await axios.get(`http://localhost:3000/productsByCategory/${category}`);
+      const response = await axios.get(`https://cegm-backend.onrender.com/productsByCategory/${category}`);
       const fetchedProducts = response.data.products;
       const productOptions = fetchedProducts.map(product => ({
         value: product.product_Id,
@@ -244,7 +244,7 @@ const CreateTransaction = () => {
 
   const fetchProducts = async (index) => {
     try {
-      const response = await axios.get(`http://localhost:3000/products`);
+      const response = await axios.get(`https://cegm-backend.onrender.com/products`);
       const fetchedProducts = response.data.products;
       const productOptions = fetchedProducts.map(product => ({
         value: product.product_Id,

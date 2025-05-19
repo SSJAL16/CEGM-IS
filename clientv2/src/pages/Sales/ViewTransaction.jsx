@@ -32,7 +32,7 @@ const ViewTransaction = () => {
   useEffect(() => {
     const fetchTransactionDetails = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/getTransaction/${transactionId}`);
+        const response = await axios.get(`https://cegm-backend.onrender.com/getTransaction/${transactionId}`);
 
         if (response.data) {
           setTransactionDetails(response.data);
@@ -53,7 +53,7 @@ const ViewTransaction = () => {
 
     const fetchRefundDetails = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/getRefund/${transactionId}`);
+        const response = await axios.get(`https://cegm-backend.onrender.com/getRefund/${transactionId}`);
 
         if (response.data) {
           setRefunds(response.data.data || []);
@@ -67,7 +67,7 @@ const ViewTransaction = () => {
 
     const fetchReplaceDetails = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/getReplace/${transactionId}`);
+        const response = await axios.get(`https://cegm-backend.onrender.com/getReplace/${transactionId}`);
 
         if (response.data) {
           setReplaces(response.data.data || []);
@@ -108,7 +108,7 @@ const ViewTransaction = () => {
   const handleDelete = async () => {
     try {
       // Make the DELETE request to the backend to remove the transaction
-      await axios.delete(`http://localhost:3000/deleteTransaction/${transactionId}`);
+      await axios.delete(`https://cegm-backend.onrender.com/deleteTransaction/${transactionId}`);
       navigate('/Sales'); // Navigate back to the sales page after deletion
     } catch (error) {
       console.error("Error deleting transaction:", error);

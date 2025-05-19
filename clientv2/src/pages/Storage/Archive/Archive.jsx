@@ -14,7 +14,7 @@ const Archive = () => {
   const fetchArchivedProducts = async () => {
     try {
       setLoading(true);
-      const response = await axios.get("http://localhost:3000/api/archive");
+      const response = await axios.get("https://cegm-backend.onrender.com/api/archive");
       setArchivedProducts(response.data);
       setError(null);
     } catch (err) {

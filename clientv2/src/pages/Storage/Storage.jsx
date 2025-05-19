@@ -207,7 +207,7 @@ const Storage = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/api/category");
+        const response = await axios.get("https://cegm-backend.onrender.com/api/category");
         setCategories(response.data);
       } catch (error) {
         setError("Could not fetch categories. Please try again later.");
@@ -232,7 +232,7 @@ const Storage = () => {
     const fetchProducts = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:3000/api/storage-products"
+          "https://cegm-backend.onrender.com/api/storage-products"
         );
         setProducts(response.data);
       } catch (error) {
@@ -314,7 +314,7 @@ const Storage = () => {
 
         // Update product in DB
         response = await axios.put(
-          `http://localhost:3000/api/storage-products/${currentProductId}`,
+          `https://cegm-backend.onrender.com/api/storage-products/${currentProductId}`,
           updatedProductData
         );
 
@@ -330,7 +330,7 @@ const Storage = () => {
           newProduct.product_Quantity !== 0 &&
           !isNaN(newProduct.product_Quantity)
         ) {
-          await axios.post("http://localhost:3000/api/stockMovement", {
+          await axios.post("https://cegm-backend.onrender.com/api/stockMovement", {
             product_ID: existingProduct.product_Id,
             adj_Description: existingProduct.product_Description,
             adj_Category: existingProduct.product_Category,
@@ -342,14 +342,14 @@ const Storage = () => {
       } else {
         // Create new product
         response = await axios.post(
-          "http://localhost:3000/api/storage-products",
+          "https://cegm-backend.onrender.com/api/storage-products",
           productData
         );
         const createdProduct = response.data;
         setProducts((prevProducts) => [...prevProducts, createdProduct]);
 
         // Manual adjustment entry
-        await axios.post("http://localhost:3000/api/manualAdjustment", {
+        await axios.post("https://cegm-backend.onrender.com/api/manualAdjustment", {
           product_ID: createdProduct.product_Id,
           adj_Description: createdProduct.product_Description,
           adj_Category: createdProduct.product_Category,
@@ -359,7 +359,7 @@ const Storage = () => {
         });
 
         // Stock movement entry
-        await axios.post("http://localhost:3000/api/stockMovement", {
+        await axios.post("https://cegm-backend.onrender.com/api/stockMovement", {
           product_ID: createdProduct.product_Id,
           adj_Description: createdProduct.product_Description,
           adj_Category: createdProduct.product_Category,
@@ -524,7 +524,7 @@ const Storage = () => {
 
       if (action === "archive" && productsToArchive.length > 0) {
         await axios.post(
-          "http://localhost:3000/api/archive/bulk",
+          "https://cegm-backend.onrender.com/api/archive/bulk",
           productsToArchive
         );
       }
@@ -532,7 +532,7 @@ const Storage = () => {
       if (action === "delete" || action === "archive") {
         for (let id of selectedProducts) {
           await axios.delete(
-            `http://localhost:3000/api/storage-products/${id}`
+            `https://cegm-backend.onrender.com/api/storage-products/${id}`
           );
         }
       }
@@ -567,7 +567,7 @@ const Storage = () => {
 
       if (productsToArchive.length > 0) {
         await axios.post(
-          "http://localhost:3000/api/archive/bulk",
+          "https://cegm-backend.onrender.com/api/archive/bulk",
           productsToArchive
         );
       }
@@ -592,7 +592,7 @@ const Storage = () => {
   const handlePermanentDelete = async () => {
     try {
       for (let id of selectedProducts) {
-        await axios.delete(`http://localhost:3000/api/storage-products/${id}`);
+        await axios.delete(`https://cegm-backend.onrender.com/api/storage-products/${id}`);
       }
 
       setProducts((prevProducts) =>
@@ -619,7 +619,7 @@ const Storage = () => {
     const fetchProducts = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:3000/api/storage-products"
+          "https://cegm-backend.onrender.com/api/storage-products"
         );
         const fetchedProducts = response.data;
 

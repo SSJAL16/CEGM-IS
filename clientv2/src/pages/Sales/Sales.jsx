@@ -23,7 +23,7 @@ const Sales = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/categories');
+        const response = await axios.get('https://cegm-backend.onrender.com/categories');
         const fetchedCategories = response.data.categories;
         const categoryOptions = fetchedCategories.map(category => ({
           value: category,
@@ -81,7 +81,7 @@ const Sales = () => {
   useEffect(() => {
     const fetchSalesTransactions = async () => {
       try {
-        const response = await axios.post('http://localhost:3000/findsalestransaction');
+        const response = await axios.post('https://cegm-backend.onrender.com/findsalestransaction');
         readTransactionData(response.data);
         setFilteredData(response.data);
       } catch (error) {

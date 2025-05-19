@@ -33,7 +33,7 @@ const CreateProducts = () => {
   useEffect(() => {
     const fetchSuppliers = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/api/suppliers");
+        const response = await axios.get("https://cegm-backend.onrender.com/api/suppliers");
 
         // Check for the new response structure
         if (
@@ -61,7 +61,7 @@ const CreateProducts = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/api/category/");
+        const response = await axios.get("https://cegm-backend.onrender.com/api/category/");
         setCategories(response.data);
       } catch (error) {
         console.error("Error fetching categories:", error);
@@ -294,7 +294,7 @@ const CreateProducts = () => {
 
       // Step 3: Send products to backend
       const response = await axios.post(
-        "http://localhost:3000/api/storage-products/bulk",
+        "https://cegm-backend.onrender.com/api/storage-products/bulk",
         updatedProductList
       );
 
@@ -318,7 +318,7 @@ const CreateProducts = () => {
 
         // Step 5: Send adjustments to backend
         const manualAdjustmentResponse = await axios.post(
-          "http://localhost:3000/api/manualAdjustment",
+          "https://cegm-backend.onrender.com/api/manualAdjustment",
           manualAdjustments
         );
 
@@ -351,7 +351,7 @@ const CreateProducts = () => {
       }));
 
       await axios.post(
-        "http://localhost:3000/api/stockMovement/bulk",
+        "https://cegm-backend.onrender.com/api/stockMovement/bulk",
         stockMovements
       );
     } catch (error) {

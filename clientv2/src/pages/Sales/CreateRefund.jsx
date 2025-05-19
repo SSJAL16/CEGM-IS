@@ -21,7 +21,7 @@ const CreateRefund = () => {
   useEffect(() => {
     const fetchTransactionDetails = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/getTransaction/${transactionId}`);
+        const response = await axios.get(`https://cegm-backend.onrender.com/getTransaction/${transactionId}`);
 
         if (response.data) {
           setTransactionDetails(response.data);
@@ -140,7 +140,7 @@ const CreateRefund = () => {
           adj_Adjustment_Type: "Returned",
         };
 
-        const movementRes = await fetch("http://localhost:3000/api/stockMovement", {
+        const movementRes = await fetch("https://cegm-backend.onrender.com/api/stockMovement", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -173,7 +173,7 @@ const CreateRefund = () => {
         })),
       };
 
-      const result = await axios.put(`http://localhost:3000/createRefundTransaction/${transactionId}`, refund);
+      const result = await axios.put(`https://cegm-backend.onrender.com/createRefundTransaction/${transactionId}`, refund);
 
       if (!result.data.success) {
         throw new Error(result.data.error || 'Unknown error occurred');
@@ -195,7 +195,7 @@ const CreateRefund = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/categories');
+        const response = await axios.get('https://cegm-backend.onrender.com/categories');
         const fetchedCategories = response.data.categories
         const categoryOptions = fetchedCategories.map(category => ({
           value: category,
@@ -212,7 +212,7 @@ const CreateRefund = () => {
 
    const fetchProductsByCategory = async (category, index) => {
     try {
-      const response = await axios.get(`http://localhost:3000/productsByCategory/${category}`);
+      const response = await axios.get(`https://cegm-backend.onrender.com/productsByCategory/${category}`);
       const fetchedProducts = response.data.products;
       const productOptions = fetchedProducts.map(product => ({
         value: product.product_Id,

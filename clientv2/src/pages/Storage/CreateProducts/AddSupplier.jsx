@@ -27,7 +27,7 @@ const CreateSupplier = () => {
   // Fetch suppliers on component mount
   useEffect(() => {
     axios
-      .get("http://localhost:3000/api/storageSupplier")
+      .get("https://cegm-backend.onrender.com/api/storageSupplier")
       .then((response) => {
         setSuppliers(response.data);
         setFilteredSuppliers(response.data);
@@ -71,7 +71,7 @@ const CreateSupplier = () => {
 
   const confirmAddSupplier = () => {
     axios
-      .post("http://localhost:3000/api/storageSupplier", {
+      .post("https://cegm-backend.onrender.com/api/storageSupplier", {
         name: newSupplier,
       })
       .then((response) => {
@@ -86,7 +86,7 @@ const CreateSupplier = () => {
 
   const confirmEditSupplier = () => {
     axios
-      .put(`http://localhost:3000/api/storageSupplier/${editSupplier._id}`, {
+      .put(`https://cegm-backend.onrender.com/api/storageSupplier/${editSupplier._id}`, {
         name: editSupplier.name,
       })
       .then((response) => {
@@ -110,7 +110,7 @@ const CreateSupplier = () => {
   const confirmDeleteSupplier = () => {
     setAction("delete"); // Set action to "delete" before making the request
     axios
-      .delete(`http://localhost:3000/api/storageSupplier/${deleteId}`)
+      .delete(`https://cegm-backend.onrender.com/api/storageSupplier/${deleteId}`)
       .then(() => {
         setSuppliers(suppliers.filter((supplier) => supplier._id !== deleteId));
         setFilteredSuppliers(

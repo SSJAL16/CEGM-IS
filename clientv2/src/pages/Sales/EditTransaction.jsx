@@ -28,7 +28,7 @@ const EditTransaction = () => {
 
     const fetchTransactionDetails = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/getTransaction/${transactionId}`);
+        const response = await axios.get(`https://cegm-backend.onrender.com/getTransaction/${transactionId}`);
 
         console.log(response.data);
 
@@ -76,7 +76,7 @@ const EditTransaction = () => {
 
   const fetchProductsById = async (product_id, index) => {
     try {
-      const response = await axios.get(`http://localhost:3000/productsByID/${product_id}`);
+      const response = await axios.get(`https://cegm-backend.onrender.com/productsByID/${product_id}`);
       const fetchedProductsStock = response.data.products;
       const stock = fetchedProductsStock[0]?.product_Current_Stock; // Get the stock directly
 
@@ -183,7 +183,7 @@ const EditTransaction = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/categories');
+        const response = await axios.get('https://cegm-backend.onrender.com/categories');
         const fetchedCategories = response.data.categories
         const categoryOptions = fetchedCategories.map(category => ({
           value: category,
@@ -232,7 +232,7 @@ const EditTransaction = () => {
 
   const fetchProductsByCategory = async (category, index) => {
     try {
-      const response = await axios.get(`http://localhost:3000/productsByCategory/${category}`);
+      const response = await axios.get(`https://cegm-backend.onrender.com/productsByCategory/${category}`);
       const fetchedProducts = response.data.products;
       const productOptions = fetchedProducts.map(product => ({
         value: product.product_Id,
@@ -253,7 +253,7 @@ const EditTransaction = () => {
 
   const fetchProducts = async (index) => {
     try {
-      const response = await axios.get(`http://localhost:3000/products`);
+      const response = await axios.get(`https://cegm-backend.onrender.com/products`);
       const fetchedProducts = response.data.products;
       const productOptions = fetchedProducts.map(product => ({
         value: product.product_Id,
@@ -343,7 +343,7 @@ const EditTransaction = () => {
           adj_Adjustment_Type: "Sold",
         };
 
-        const movementRes = await fetch("http://localhost:3000/api/stockMovement", {
+        const movementRes = await fetch("https://cegm-backend.onrender.com/api/stockMovement", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -374,7 +374,7 @@ const EditTransaction = () => {
         }))
       };
 
-      const result = await axios.put(`http://localhost:3000/updateSalesTransaction/${transactionId}`, updatedTransaction);
+      const result = await axios.put(`https://cegm-backend.onrender.com/updateSalesTransaction/${transactionId}`, updatedTransaction);
 
       if (!result.data.success) {
         throw new Error(result.data.error || "Unknown error occurred while updating transaction.");

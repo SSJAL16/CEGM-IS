@@ -13,7 +13,7 @@ const Refunded = () => {
   useEffect(() => {
     const fetchRefunds = async () => {
       try {
-        const response = await axios.post('http://localhost:3000/findrefund');
+        const response = await axios.post('https://cegm-backend.onrender.com/findrefund');
         readRefundsData(response.data); // assuming the data is in the expected format
       } catch (error) {
         console.error("Error fetching refund data:", error);
@@ -81,7 +81,7 @@ const Refunded = () => {
 
   const handleDelete = async (refundId) => {
     try {
-      const response = await axios.delete('http://localhost:3000/deleteRefund', {
+      const response = await axios.delete('https://cegm-backend.onrender.com/deleteRefund', {
         data: { refundId },
       });
       if (response.data.success) {

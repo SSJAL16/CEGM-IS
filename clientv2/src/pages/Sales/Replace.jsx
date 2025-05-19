@@ -29,7 +29,7 @@ const CreateReplace = () => {
   useEffect(() => {
     const fetchTransactionDetails = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/getTransaction/${transactionId}`);
+        const response = await axios.get(`https://cegm-backend.onrender.com/getTransaction/${transactionId}`);
 
         if (response.data) {
           setTransactionDetails(response.data);
@@ -147,7 +147,7 @@ const CreateReplace = () => {
     console.log(replace)
 
     axios
-      .put(`http://localhost:3000/createReplaceTransaction/${transactionId}`, replace)
+      .put(`https://cegm-backend.onrender.com/createReplaceTransaction/${transactionId}`, replace)
       .then((result) => {
         if (result.data.success) {
           setShowSaveModal(true);

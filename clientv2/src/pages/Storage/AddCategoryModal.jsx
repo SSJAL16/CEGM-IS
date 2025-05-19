@@ -15,7 +15,7 @@ const CategoryModal = ({ show, handleClose }) => {
 
   const fetchCategories = async () => {
     try {
-      const response = await axios.get("http://localhost:3001/api/category");
+      const response = await axios.get("https://cegm-backend.onrender.com/api/category");
       setCategories(response.data.reverse());
     } catch (error) {
       console.error("Failed to fetch categories", error);
@@ -32,7 +32,7 @@ const CategoryModal = ({ show, handleClose }) => {
       // Update category
       try {
         await axios.put(
-          `http://localhost:3001/api/category/${editingCategory._id}`,
+          `https://cegm-backend.onrender.com/api/category/${editingCategory._id}`,
           { product_Category: categoryName }
         );
         fetchCategories();
@@ -43,7 +43,7 @@ const CategoryModal = ({ show, handleClose }) => {
     } else {
       // Create category
       try {
-        await axios.post("http://localhost:3001/api/category", {
+        await axios.post("https://cegm-backend.onrender.com/api/category", {
           product_Category: categoryName,
         });
         fetchCategories();
@@ -62,7 +62,7 @@ const CategoryModal = ({ show, handleClose }) => {
   const handleDeleteClick = async (categoryId) => {
     if (window.confirm("Are you sure you want to delete this category?")) {
       try {
-        await axios.delete(`http://localhost:3001/api/category/${categoryId}`);
+        await axios.delete(`https://cegm-backend.onrender.com/api/category/${categoryId}`);
         fetchCategories(); // Refresh the list after deletion
       } catch (error) {
         console.error("Failed to delete category", error);

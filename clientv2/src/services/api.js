@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API_URL =
-  import.meta.env.MODE === "development" ? "http://localhost:3000/api" : "/api";
+  import.meta.env.MODE === "development" ? "https://cegm-backend.onrender.com/api" : "/api";
 
 const api = axios.create({
   baseURL: API_URL,

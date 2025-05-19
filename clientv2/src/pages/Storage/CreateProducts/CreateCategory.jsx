@@ -27,7 +27,7 @@ const CreateProducts = () => {
   // Fetch categories on component mount
   useEffect(() => {
     axios
-      .get("http://localhost:3000/api/category")
+      .get("https://cegm-backend.onrender.com/api/category")
       .then((response) => {
         setCategories(response.data);
         setFilteredCategories(response.data);
@@ -69,7 +69,7 @@ const CreateProducts = () => {
 
   const confirmAddCategory = () => {
     axios
-      .post("http://localhost:3000/api/category", {
+      .post("https://cegm-backend.onrender.com/api/category", {
         product_Category: newCategory,
       })
       .then((response) => {
@@ -84,7 +84,7 @@ const CreateProducts = () => {
 
   const confirmEditCategory = () => {
     axios
-      .put(`http://localhost:3000/api/category/${editCategory._id}`, {
+      .put(`https://cegm-backend.onrender.com/api/category/${editCategory._id}`, {
         product_Category: editCategory.product_Category,
       })
       .then((response) => {
@@ -108,7 +108,7 @@ const CreateProducts = () => {
   const confirmDeleteCategory = () => {
     setAction("delete"); // Set action to "delete" before making the request
     axios
-      .delete(`http://localhost:3000/api/category/${deleteId}`)
+      .delete(`https://cegm-backend.onrender.com/api/category/${deleteId}`)
       .then(() => {
         setCategories(
           categories.filter((category) => category._id !== deleteId)
