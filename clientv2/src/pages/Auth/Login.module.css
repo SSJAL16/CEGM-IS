@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #ececec;
+}
+
+/*------------ Login container ------------*/
+
+.box-area {
+  width: 930px;
+}
+
+/*------------ Right box ------------*/
+
+.right-box {
+  padding: 40px 30px 40px 40px;
+}
+
+/*------------ Custom Placeholder ------------*/
+
+::placeholder {
+  font-size: 16px;
+}
+
+.rounded-4 {
+  border-radius: 20px;
+}
+.rounded-5 {
+  border-radius: 30px;
+}
+
+/*------------ For small screens------------*/
+
+@media only screen and (max-width: 768px) {
+  .box-area {
+    margin: 0 10px;
+  }
+  .left_box {
+    height: 230px;
+    overflow: hidden;
+  }
+  .right-box {
+    padding: 20px;
+  }
+}
+.cokinsBox {
+  background: linear-gradient(90deg, #331373 0%, #0773dc 50%);
+  border-radius: 20px;
+}
+.loginButton {
+  padding: 10px;
+  background: linear-gradient(90deg, #331373 0%, #0773dc 50%);
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.loginButton:hover {
+  background: linear-gradient(90deg, #0773dc 0%, #331373 50%);
+}
+
+.googleButton {
+  background-color: #f8f9fa;
+  border: none;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s, border-color 0.3s;
+  color: rgba(106, 109, 113, 1);
+}
+
+.googleButton:hover {
+  background-color: #f1f1f1;
+}
+
+.googleButton:focus {
+  outline: none;
+}

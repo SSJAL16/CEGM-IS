@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #ececec;
+}
+
+/*------------ Login container ------------*/
+
+.box-area {
+  width: 100%;
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+/*------------ Right box ------------*/
+
+.right-box {
+  padding: 35px 35px;
+}
+
+/*------------ Custom Placeholder ------------*/
+
+::placeholder {
+  font-size: 16px;
+}
+
+.rounded-4 {
+  border-radius: 25px;
+}
+.rounded-5 {
+  border-radius: 35px;
+}
+
+/*------------ For small screens------------*/
+
+@media only screen and (max-width: 768px) {
+  .box-area {
+    margin: 0 10px;
+    width: auto; /* Ensures box adjusts on smaller screens */
+  }
+  .left_box {
+    height: 250px;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  .right-box {
+    padding: 25px;
+  }
+}
+
+.cokinsBox {
+  background: linear-gradient(150deg, #331373 0%, #0773dc 75%, #0099ff 100%);
+  box-shadow: 0 8px 32px rgba(51, 19, 115, 0.25);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.cokinsBox::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.cokinsBox:hover {
+  background: linear-gradient(150deg, #331373 0%, #0773dc 65%, #0099ff 90%);
+  box-shadow: 0 12px 40px rgba(51, 19, 115, 0.3);
+}
+
+.loginButton {
+  padding: 12px;
+  background: linear-gradient(150deg, #331373 0%, #0773dc 75%, #0099ff 100%);
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.loginButton:hover {
+  background: linear-gradient(150deg, #331373 0%, #0773dc 65%, #0099ff 90%);
+  transform: translateY(-1px);
+  box-shadow: 0 5px 15px rgba(7, 115, 220, 0.2);
+}
+
+.form-control-container {
+  width: 100%;
+}
+
+.phone-code-container {
+  min-width: 120px;
+  margin-right: 8px;
+}
+
+/* Override react-country-state-city default styles */
+:global(.react-country-state-city__control) {
+  min-height: 40px !important;
+  border-radius: 4px !important;
+  border-color: rgba(0, 0, 0, 0.23) !important;
+}
+
+:global(.react-country-state-city__control--is-focused) {
+  border-color: #1976d2 !important;
+  box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.2) !important;
+}
+
+:global(.react-country-state-city__control--is-invalid) {
+  border-color: #d32f2f !important;
+}
+
+:global(.react-country-state-city__value-container) {
+  padding: 2px 8px !important;
+}
+
+:global(.react-country-state-city__input-container) {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+:global(.react-country-state-city__placeholder) {
+  color: rgba(0, 0, 0, 0.6) !important;
+}
+
+:global(.phone-code-container .react-country-state-city__control) {
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+:global(.phone-code-container + .MuiTextField-root .MuiOutlinedInput-root) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}

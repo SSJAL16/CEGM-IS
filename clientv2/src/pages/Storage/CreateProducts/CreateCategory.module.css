@@ -1,0 +1,70 @@
+/* General Styles for the Card and Container */
+.card {
+  background-color: #fff;
+}
+
+.container {
+  padding: 20px;
+}
+
+/* Add Category Button Styles */
+.add-category-btn {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.add-category-btn:hover {
+  transform: translateY(-2px);
+}
+
+.add-category-btn:active {
+  transform: translateY(1px);
+}
+
+/* Category List Item Styles */
+.list-group-item {
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  padding: 10px 20px;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.list-group-item:hover {
+  background-color: #e9ecef;
+  cursor: pointer;
+}
+
+/* Category Name Styles */
+.category-name {
+  font-weight: 600;
+  color: #333;
+}
+
+/* Action Button Styles */
+.edit-btn,
+.delete-btn {
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+}
+
+.edit-btn:hover,
+.delete-btn:hover {
+  transform: translateY(-2px);
+}
+
+.edit-btn:active,
+.delete-btn:active {
+  transform: translateY(1px);
+}
+
+/* Spacing for Action Buttons */
+.d-flex {
+  gap: 10px;
+}
